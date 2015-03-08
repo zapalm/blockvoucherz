@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Voucherz: module for PrestaShop 1.2-1.6
+ * Block Voucherz: module for PrestaShop 1.2-1.4
  *
  * @author zapalm <zapalm@ya.ru>
  * @copyright (c) 2011-2015, zapalm
@@ -20,7 +20,7 @@ class BlockVoucherz extends Module
 		$this->version = '1.1.0';
 		$this->author = 'zapalm';
 		$this->need_instance = 0;
-		$this->ps_versions_compliancy = array('min' => '1.2.0.0', 'max' => '1.6.1.0');
+		$this->ps_versions_compliancy = array('min' => '1.2.0.0', 'max' => '1.4.12.0');
 		$this->bootstrap = false;
 
 		parent::__construct();
