@@ -21,12 +21,12 @@ class BlockVoucherz extends Module
      * @inheritdoc
      */
     public function __construct() {
-        $this->name = 'blockvoucherz';
-        $this->tab = 'Tools';
-        $this->version = '1.1.0';
-        $this->author = 'zapalm';
+        $this->name          = 'blockvoucherz';
+        $this->tab           = 'Tools';
+        $this->version       = '1.1.0';
+        $this->author        = 'zapalm';
         $this->need_instance = 0;
-        $this->bootstrap = false;
+        $this->bootstrap     = false;
 
         parent::__construct();
 
@@ -39,12 +39,12 @@ class BlockVoucherz extends Module
      */
     public function install() {
         return parent::install()
-        && $this->registerHook('rightColumn')
-        && Configuration::updateValue('BLOCKVOUCHERZ_START', '')
-        && Configuration::updateValue('BLOCKVOUCHERZ_DAYS', 0)
-        && Configuration::updateValue('BLOCKVOUCHERZ_CAT', 1)
-        && Configuration::updateValue('BLOCKVOUCHERZ_NAME', 'Gift voucher')
-        && $this->createTables();
+            && $this->registerHook('rightColumn')
+            && Configuration::updateValue('BLOCKVOUCHERZ_START', '')
+            && Configuration::updateValue('BLOCKVOUCHERZ_DAYS', 0)
+            && Configuration::updateValue('BLOCKVOUCHERZ_CAT', 1)
+            && Configuration::updateValue('BLOCKVOUCHERZ_NAME', 'Gift voucher')
+            && $this->createTables();
     }
 
     /**
@@ -55,10 +55,10 @@ class BlockVoucherz extends Module
         Db::getInstance()->Execute('DROP TABLE `' . _DB_PREFIX_ . 'voucherz`');
 
         return parent::uninstall()
-        && Configuration::deleteByName('BLOCKVOUCHERZ_START')
-        && Configuration::deleteByName('BLOCKVOUCHERZ_DAYS')
-        && Configuration::deleteByName('BLOCKVOUCHERZ_CAT')
-        && Configuration::deleteByName('BLOCKVOUCHERZ_NAME');
+            && Configuration::deleteByName('BLOCKVOUCHERZ_START')
+            && Configuration::deleteByName('BLOCKVOUCHERZ_DAYS')
+            && Configuration::deleteByName('BLOCKVOUCHERZ_CAT')
+            && Configuration::deleteByName('BLOCKVOUCHERZ_NAME');
     }
 
     /**
@@ -103,9 +103,9 @@ class BlockVoucherz extends Module
 
         $smarty->assign(array(
             'sales' => $this->getSales(),
-            'days' => Configuration::get('BLOCKVOUCHERZ_DAYS'),
+            'days'  => Configuration::get('BLOCKVOUCHERZ_DAYS'),
             'start' => Configuration::get('BLOCKVOUCHERZ_START'),
-            'cat' => $link->getCategoryLink((int)Configuration::get('BLOCKVOUCHERZ_CAT'), null, (int)$cookie->id_lang)
+            'cat'   => $link->getCategoryLink((int)Configuration::get('BLOCKVOUCHERZ_CAT'), null, (int)$cookie->id_lang),
         ));
 
         return $this->display(__FILE__, 'blockvoucherz.tpl');
