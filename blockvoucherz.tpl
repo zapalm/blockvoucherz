@@ -3,7 +3,7 @@
 *
 * @author      zapalm <zapalm@ya.ru>
 * @copyright   (c) 2011-2016, zapalm
-* @link        http://prestashop.modulez.ru/en/ The module's homepage
+* @link        http://prestashop.modulez.ru/en/frontend-features/33-selling-gift-vouchers.html The module's homepage
 * @license     http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
 *}
 
