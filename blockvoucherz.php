@@ -20,7 +20,6 @@ class BlockVoucherz extends Module
 		$this->version = '1.1.0';
 		$this->author = 'zapalm';
 		$this->need_instance = 0;
-		$this->ps_versions_compliancy = array('min' => '1.2.0.0', 'max' => '1.4.12.0');
 		$this->bootstrap = false;
 
 		parent::__construct();
