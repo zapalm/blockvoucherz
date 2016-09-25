@@ -23,7 +23,7 @@ class BlockVoucherz extends Module
     public function __construct() {
         $this->name          = 'blockvoucherz';
         $this->tab           = 'Tools';
-        $this->version       = '1.1.0';
+        $this->version       = '1.1.1';
         $this->author        = 'zapalm';
         $this->need_instance = 0;
         $this->bootstrap     = false;
