@@ -12,8 +12,14 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+/**
+ * @inheritdoc
+ */
 class BlockVoucherz extends Module
 {
+    /**
+     * @inheritdoc
+     */
     public function __construct() {
         $this->name = 'blockvoucherz';
         $this->tab = 'Tools';
@@ -28,6 +34,9 @@ class BlockVoucherz extends Module
         $this->description = $this->l('Allows to sell gift vouchers.');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function install() {
         return parent::install()
         && $this->registerHook('rightColumn')
@@ -38,6 +47,9 @@ class BlockVoucherz extends Module
         && $this->createTables();
     }
 
+    /**
+     * @inheritdoc
+     */
     public function uninstall() {
         // @todo: should not be deleted because of lack the procedure of checking
         Db::getInstance()->Execute('DROP TABLE `' . _DB_PREFIX_ . 'voucherz`');
@@ -49,6 +61,9 @@ class BlockVoucherz extends Module
         && Configuration::deleteByName('BLOCKVOUCHERZ_NAME');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getContent() {
         $output = '';
 
@@ -119,6 +134,11 @@ class BlockVoucherz extends Module
         return Db::getInstance()->execute($sql);
     }
 
+    /**
+     * @todo needs refactoring
+     *
+     * @return int
+     */
     private function getSales() {
         global $cookie;
 
